@@ -1,4 +1,4 @@
-package unit_03;
+
 
 import java.util.Scanner;
 
@@ -190,4 +190,27 @@ class ExceptionHandling {
 			System.out.println("Program is about to end....");
 		}
 	}
+
+	void calculateArea(int r) throws ManualException {
+
+		if (r < 0) {
+			throw new ManualException();
+		}
+
+		int area = r * r;
+		System.out.println(area);
+
+	}
+
+}
+
+@SuppressWarnings("serial")
+class ManualException extends Exception {
+
+	@Override
+	public String getMessage() {
+		String detailMessage = "Exception Occured!";
+		return detailMessage;
+	}
+
 }
